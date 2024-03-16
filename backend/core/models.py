@@ -1,51 +1,40 @@
-from django.conf import settings
-from django.contrib.auth.models import (
-    AbstractBaseUser,
-    BaseUserManager,
-    Group,
-    PermissionsMixin,
-)
-from django.core.validators import validate_email
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from django.contrib.auth.models import BaseUserManager
 
-class UserManager(BaseUserManager):
-    """
-    User Manager.
-    To create superuser.
-    """
 
-    def create_user(self, email, password=None):
-        user = self.model(email=email)
+class CustomUserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError("The Email field must be set")
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password):
-        user = self.create_user(email=email, password=password)
-        user.is_active = True
-        user.is_staff = True
-        user.is_superuser = True
-        user.save(using=self._db)
-        return user
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("is_active", True)
+
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+
+        return self.create_user(email, password, **extra_fields)
 
 
-class User(AbstractBaseUser, PermissionsMixin):
-    """
-    Custom User model.
-    """
+class User(AbstractUser):
+    email = models.EmailField(unique=True)
 
-    email = models.EmailField(
-        max_length=50, blank=True, null=True, validators=[validate_email], unique=True
-    )
-
-    is_active = models.BooleanField(default=False)
-    is_staff = models.BooleanField(default=False)
-    user_registered_at = models.DateTimeField(auto_now_add=True)
+    username = None
+    first_name = None
+    last_name = None
 
     USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
 
-    objects = UserManager()
-
-    def __str__(self):
-        return self.email
+    objects = CustomUserManager()

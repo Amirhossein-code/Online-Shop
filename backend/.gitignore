@@ -9,6 +9,7 @@ __pycache__/
 general.log
 
 .env
+
 # Distribution / packaging
 .Python
 build/
