@@ -14,6 +14,6 @@ class IsOwner(BasePermission):
         # Check if the user is authenticated
         if request.user.is_authenticated:
             # Ensure that only the user who created the object can delete or update it
-            return obj.customer.id == request.user.customer.id
+            return obj.id == request.user.customer.id
 
         return False

@@ -3,9 +3,15 @@ from ..models import Customer
 
 
 class UpdateCustomerSerializer(serializers.ModelSerializer):
+    """
+    For Updating Customer
+    """
+
     class Meta:
         model = Customer
         fields = [
+            "first_name",
+            "last_name",
             "phone",
             "birth_date",
             "image",
@@ -13,6 +19,10 @@ class UpdateCustomerSerializer(serializers.ModelSerializer):
 
 
 class SimpleCustomerSerializer(serializers.ModelSerializer):
+    """
+    Simple Readonly serializer for Customer
+    """
+
     class Meta:
         model = Customer
         fields = [

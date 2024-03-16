@@ -12,6 +12,8 @@ from ..serializers import (
     DetailedCustomerSerializer,
     UpdateCustomerSerializer,
 )
+from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet
 from ..permissions import IsOwner
 
 
@@ -35,10 +37,7 @@ class CustomerViewSet(ModelViewSet):
         permission_classes=[IsAuthenticated, IsOwner],
     )
     def me(self, request):
-        try:
-            customer = Customer.objects.get(user_id=request.user.id)
-        except Customer.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        customer = self.get_object()
 
         if request.method == "GET":
             serializer = DetailedCustomerSerializer(customer)
@@ -48,3 +47,9 @@ class CustomerViewSet(ModelViewSet):
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return Response(serializer.data)
+
+    def get_object(self):
+        try:
+            return Customer.objects.get(user_id=self.request.user.id)
+        except Customer.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
