@@ -5,6 +5,16 @@ name = "pypi"
 
 [packages]
 django = "*"
+djangorestframework = "*"
+djangorestframework-simplejwt = "*"
+drf-nested-routers = "*"
+django-autoslug = "*"
+pillow = "*"
+mysql-connector-python = "*"
+django-filter = "*"
+python-dotenv = "*"
+django-cors-headers = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
