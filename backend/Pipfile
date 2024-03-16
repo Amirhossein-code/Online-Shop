@@ -16,7 +16,6 @@ python-dotenv = "*"
 django-cors-headers = "*"
 django-debug-toolbar = "*"
 requests = "*"
-djoser = "*"
 
 [dev-packages]
 

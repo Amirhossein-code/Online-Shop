@@ -17,7 +17,6 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "djoser",
     "django_filters",
     "corsheaders",
     "debug_toolbar",
@@ -95,7 +94,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INTERNAL_IPS = [
     "127.0.0.1",
-    "localhost",
 ]
 
 REST_FRAMEWORK = {
@@ -104,14 +102,6 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
-}
-
-DJOSER = {
-    "REGISTER": False,
-    "SERIALIZERS": {
-        "user_create": "core.serializers.UserCreateSerializer",
-        "current_user": "core.serializers.UserSerializer",
-    },
 }
 
 AUTH_USER_MODEL = "core.User"
