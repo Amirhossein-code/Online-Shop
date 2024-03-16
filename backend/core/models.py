@@ -4,12 +4,7 @@ from django.db import models
 
 # Create your models here.
 class User(AbstractUser):
-    phone = models.CharField(max_length=20, unique=True)
-
-    email = None
+    email = models.EmailField(unique=True)
     username = None
-    first_name = None
-    last_name = None
-
-    USERNAME_FIELD = "phone"
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

@@ -7,7 +7,6 @@ SECRET_KEY = "django-insecure-5io87@c17gn5$3=n1q*u2m#$+n*yzot5ca^!*()smv-nhwhvow
 
 DEBUG = True
 
-
 DATABASES = {
     "default": {
         "ENGINE": "mysql.connector.django",

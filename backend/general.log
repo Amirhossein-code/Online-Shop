@@ -1,0 +1,357 @@
+2024-03-16 12:33:11,379 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:33:30,251 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:34:42,521 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:34:59,134 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:35:06,022 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:35:07,762 (ERROR) - django.request - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:35:08,247 (ERROR) - django.request - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:35:25,642 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/urls.py changed, reloading.
+2024-03-16 12:35:26,011 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:35:27,006 (ERROR) - django.request - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:35:27,193 (ERROR) - django.request - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:36:44,490 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/settings/common.py changed, reloading.
+2024-03-16 12:36:44,811 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:36:49,175 (ERROR) - django.request - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:36:49,447 (ERROR) - django.request - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:36:51,832 (ERROR) - django.request - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:36:52,033 (ERROR) - django.request - Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/middleware.py", line 74, in __call__
+    rendered = toolbar.render_toolbar()
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/debug_toolbar/toolbar.py", line 82, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/amir/.local/share/virtualenvs/backend--dLhPfFk/lib/python3.10/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+2024-03-16 12:37:15,718 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/urls.py changed, reloading.
+2024-03-16 12:37:16,030 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:37:17,285 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/urls.py changed, reloading.
+2024-03-16 12:37:17,601 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:37:20,894 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/urls.py changed, reloading.
+2024-03-16 12:37:21,198 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:37:26,445 (INFO) - django.utils.autoreload - /home/amir/Desktop/Projects/Vsss/shop/backend/API/urls.py changed, reloading.
+2024-03-16 12:37:26,739 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2024-03-16 12:37:28,251 (WARNING) - django.request - Not Found: /
+2024-03-16 12:37:28,422 (WARNING) - django.request - Not Found: /favicon.ico
+2024-03-16 12:37:31,020 (WARNING) - django.request - Not Found: /auth/users/
+2024-03-16 12:37:31,439 (WARNING) - django.request - Not Found: /auth/users/

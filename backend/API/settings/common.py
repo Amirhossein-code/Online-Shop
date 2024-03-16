@@ -4,6 +4,7 @@ from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+
 DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -16,7 +17,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    # "djoser",
+    "djoser",
     "django_filters",
     "corsheaders",
     "debug_toolbar",
@@ -25,6 +26,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "core",
+    "store",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -93,30 +95,31 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 INTERNAL_IPS = [
     "127.0.0.1",
+    "localhost",
 ]
 
-# REST_FRAMEWORK = {
-#     "COERCE_DECIMAL_TO_STRING": False,
-#     "DEFAULT_AUTHENTICATION_CLASSES": (
-#         "rest_framework_simplejwt.authentication.JWTAuthentication",
-#     ),
-#     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
-# }
+REST_FRAMEWORK = {
+    "COERCE_DECIMAL_TO_STRING": False,
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
+}
 
-# DJOSER = {
-#     "REGISTER": False,
-#     "SERIALIZERS": {
-#         "user_create": "core.serializers.UserCreateSerializer",
-#         "current_user": "core.serializers.UserSerializer",
-#     },
-# }
+DJOSER = {
+    "REGISTER": False,
+    "SERIALIZERS": {
+        "user_create": "core.serializers.UserCreateSerializer",
+        "current_user": "core.serializers.UserSerializer",
+    },
+}
 
 AUTH_USER_MODEL = "core.User"
 
-# SIMPLE_JWT = {
-#     "AUTH_HEADER_TYPES": ("JWT",),
-#     "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
-# }
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": ("JWT",),
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
+}
 
 
 LOGGING = {
