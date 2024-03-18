@@ -3,3 +3,5 @@ from .customer_serializers import (
     UpdateCustomerSerializer,
     DetailedCustomerSerializer,
 )
+from .category_serializers import CategorySerializer
+from .product_serializers import ProductSerializer

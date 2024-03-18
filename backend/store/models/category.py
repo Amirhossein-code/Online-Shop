@@ -15,6 +15,9 @@ class Category(models.Model):
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(upload_to="store/category/", null=True, blank=True)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_update = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.title
 
