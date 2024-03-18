@@ -12,8 +12,6 @@ from ..serializers import (
     DetailedCustomerSerializer,
     UpdateCustomerSerializer,
 )
-from rest_framework import mixins
-from rest_framework.viewsets import GenericViewSet
 from ..permissions import IsOwner
 
 

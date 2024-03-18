@@ -16,6 +16,7 @@ python-dotenv = "*"
 django-cors-headers = "*"
 django-debug-toolbar = "*"
 requests = "*"
+model-bakery = "*"
 
 [dev-packages]
 

@@ -14,7 +14,6 @@ class ProductSerializer(serializers.ModelSerializer):
             "inventory",
             "description",
             "category",
-            "image",
         ]
         read_only_fields = [
             "id",
