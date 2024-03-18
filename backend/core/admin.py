@@ -1,10 +1,18 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import User
+from store.models import Customer
+
+
+class CustomerInline(admin.StackedInline):
+    model = Customer
+    extra = 1
 
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
+    inlines = [CustomerInline]
+
     list_display = ["email", "is_staff", "is_active"]
     fieldsets = [
         (None, {"fields": ["email", "password"]}),
