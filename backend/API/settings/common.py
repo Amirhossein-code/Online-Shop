@@ -79,6 +79,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CART_SESSION_ID = "store"
+
+
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -99,7 +102,7 @@ INTERNAL_IPS = [
 
 REST_FRAMEWORK = {
     "COERCE_DECIMAL_TO_STRING": False,
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
