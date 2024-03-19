@@ -25,4 +25,4 @@ class OrderItem(models.Model):
         Product, on_delete=models.PROTECT, related_name="orderitems"
     )
     quantity = models.PositiveSmallIntegerField()
-    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
+    unit_price = models.PositiveBigIntegerField()
