@@ -1,8 +1,9 @@
 from django.db import models
 from autoslug import AutoSlugField
-from common.utils import custom_slugify, round_to_nearest_thousand
+from common.utils import custom_slugify
 from .category import Category
-from ..validators import validate_file_size
+from common.validators import validate_file_size
+
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
