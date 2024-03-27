@@ -1,6 +1,3 @@
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-
 from django.contrib.auth.models import BaseUserManager
 
 
@@ -25,16 +22,3 @@ class CustomUserManager(BaseUserManager):
             raise ValueError("Superuser must have is_superuser=True.")
 
         return self.create_user(email, password, **extra_fields)
-
-
-class User(AbstractUser):
-    email = models.EmailField(unique=True)
-
-    username = None
-    first_name = None
-    last_name = None
-
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-    objects = CustomUserManager()
