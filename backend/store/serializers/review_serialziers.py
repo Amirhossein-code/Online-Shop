@@ -56,4 +56,5 @@ class DisplayProductReviewSerializer(serializers.ModelSerializer):
         ]
 
     def get_username(self, obj):
+        # find a more efficient way This is not performance friendly
         return obj.customer.user.display_name

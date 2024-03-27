@@ -22,7 +22,16 @@ class Address(models.Model):
             Address.objects.filter(customer=self.customer, main=True).exclude(
                 pk=self.pk
             ).update(main=False)
-
+        # If it is users first time creating an address and he sets main to false
+        # this ensures it is main
+        # if we have an address in databse it should have main = True for each customer
+        if not self.pk:
+            if (
+                not Address.objects.filter(customer=self.customer)
+                .exclude(pk=self.pk)
+                .exists()
+            ):
+                self.main = True
         super().save(*args, **kwargs)
 
     def __str__(self):

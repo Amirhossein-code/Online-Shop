@@ -32,21 +32,6 @@ class MyProductReviewViewSet(ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(customer=self.request.user.customer)
 
-    # @action(
-    #     detail=False,
-    #     methods=["GET"],
-    #     url_path="all-reviews",
-    #     serializer_class=[DisplayProductReviewSerializer],
-    #     permission_classes=[AllowAny],
-    # )
-    # def all_reviews(self, request, *args, **kwargs):
-    #     reviews = ProductReview.objects.filter(
-    #         product__slug=self.kwargs["product_slug"],
-    #         status=ProductReview.APPROVED,
-    #     ).all()
-    #     serializer = ProductReviewSerializer(reviews, many=True)
-    #     return Response(serializer.data)
-
 
 class ProductReviewViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     serializer_class = DisplayProductReviewSerializer
