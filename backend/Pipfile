@@ -17,6 +17,8 @@ django-cors-headers = "*"
 django-debug-toolbar = "*"
 requests = "*"
 model-bakery = "*"
+celery = "*"
+redis = "*"
 
 [dev-packages]
 
