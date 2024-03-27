@@ -12,13 +12,10 @@ class User(AbstractUser):
     """
 
     email = models.EmailField(max_length=100, unique=True)
-
-    # Only used for displaying
-    username = models.CharField(max_length=150, unique=True)
+    display_name = models.CharField(max_length=150, unique=True)
 
     # Moced to Customer model for performance reasons
-    first_name = None
-    last_name = None
+    username = None
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

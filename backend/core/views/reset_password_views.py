@@ -1,11 +1,11 @@
+from rest_framework.generics import GenericAPIView
 from rest_framework import status
 from rest_framework.response import Response
 from django.utils import timezone
-from ..models import User
+
 from ..serializers import (
     ResetPasswordSerializer,
 )
-from rest_framework.generics import GenericAPIView
 from ..models import PasswordResetToken
 
 
@@ -22,7 +22,6 @@ class ResetPasswordView(GenericAPIView):
     def post(self, request, token):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        password = serializer.validated_data.get("password")
         try:
             password_reset_token = PasswordResetToken.objects.get(token=token)
         except PasswordResetToken.DoesNotExist:
@@ -31,9 +30,10 @@ class ResetPasswordView(GenericAPIView):
             return Response("Token Expired", status=status.HTTP_400_BAD_REQUEST)
 
         user = password_reset_token.user
-        user.set_password(password)
-        user.save()
+        serializer.save(user=user)
 
         password_reset_token.delete()
 
-        return Response("Password reset successful", status=status.HTTP_200_OK)
+        return Response(
+            {"message": "Password reset successful"}, status=status.HTTP_200_OK
+        )
