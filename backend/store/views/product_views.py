@@ -38,7 +38,6 @@ class ProductViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
         if self.action == "retrieve":
             return ProductSerializer
         return SimpleProductSerializer
-
     @action(
         detail=False,
         methods=["GET"],

@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .user_manager import CustomUserManager
-from ..utils import send_welcome_email
 
 
 class User(AbstractUser):
@@ -25,7 +24,3 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
-
-    def save(self):
-        if not self.pk:
-            send_welcome_email(self.email)

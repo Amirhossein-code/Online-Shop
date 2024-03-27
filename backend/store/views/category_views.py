@@ -4,9 +4,11 @@ from rest_framework.permissions import AllowAny
 
 from ..models import Category
 from ..serializers import CategorySerializer
+from ..paginations import NormalPagination
 
 
 class CategoryViewSet(ListModelMixin, RetrieveModelMixin, GenericViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     permission_classes = [AllowAny]
+    pagination_class = NormalPagination

@@ -1,20 +1,17 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from ..models import Order, Customer
 from ..serializers import (
     OrderSerializer,
     CreateOrderSerializer,
-    UpdateOrderSerializer,
 )
 
 
 class OrderViewSet(ModelViewSet):
-    http_method_names = ["get", "post", "patch", "delete", "head", "options"]
+    http_method_names = ["get", "post", "head", "options"]
 
     def get_permissions(self):
-        if self.request.method in ["PATCH", "DELETE"]:
-            return [IsAdminUser()]
         return [IsAuthenticated()]
 
     def create(self, request, *args, **kwargs):
@@ -29,15 +26,10 @@ class OrderViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.request.method == "POST":
             return CreateOrderSerializer
-        elif self.request.method == "PATCH":
-            return UpdateOrderSerializer
         return OrderSerializer
 
     def get_queryset(self):
         user = self.request.user
-
-        if user.is_staff:
-            return Order.objects.all()
 
         customer_id = Customer.objects.only("id").get(user_id=user.id)
         return Order.objects.filter(customer_id=customer_id)

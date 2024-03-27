@@ -2,7 +2,7 @@ from django.db import models
 from autoslug import AutoSlugField
 from common.utils import custom_slugify
 from .category import Category
-from common.validators import validate_file_size
+from common.validators import validate_file_size, percentage_validator
 
 
 class Product(models.Model):
@@ -29,11 +29,14 @@ class Product(models.Model):
         slugify=custom_slugify,
     )
 
-    discount_percent = models.IntegerField(null=True, blank=True, default=0)
+    discount_percent = models.IntegerField(
+        null=True, blank=True, default=0, validators=[percentage_validator]
+    )
     original_price = models.PositiveBigIntegerField(null=True, blank=True)
     unit_price = models.PositiveBigIntegerField()
     inventory = models.PositiveIntegerField(default=0)
 
+    # add to Hot list
     is_hot = models.BooleanField(default=False)
 
     category = models.ForeignKey(
