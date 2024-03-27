@@ -1,0 +1,1 @@
+from .welcome_email import send_welcome_email_on_create
