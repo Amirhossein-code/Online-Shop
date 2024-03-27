@@ -8,7 +8,6 @@ from rest_framework.permissions import (
 from rest_framework import status
 from ..models import Customer
 from ..serializers import (
-    SimpleCustomerSerializer,
     DetailedCustomerSerializer,
     UpdateCustomerSerializer,
 )
@@ -17,7 +16,7 @@ from ..permissions import IsOwner
 
 class CustomerViewSet(ModelViewSet):
     queryset = Customer.objects.all()
-    serializer_class = SimpleCustomerSerializer
+    serializer_class = DetailedCustomerSerializer
     permission_classes = [IsAdminUser]
 
     def get_serializer_class(self):

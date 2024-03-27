@@ -10,30 +10,9 @@ class UpdateCustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = [
-            "first_name",
-            "last_name",
             "phone",
             "birth_date",
             "image",
-        ]
-
-
-class SimpleCustomerSerializer(serializers.ModelSerializer):
-    """
-    Simple Readonly serializer for Customer
-    """
-
-    class Meta:
-        model = Customer
-        fields = [
-            "id",
-            "first_name",
-            "last_name",
-        ]
-        read_only_fields = [
-            "id",
-            "first_name",
-            "last_name",
         ]
 
 
@@ -48,8 +27,6 @@ class DetailedCustomerSerializer(serializers.ModelSerializer):
         model = Customer
         fields = [
             "id",
-            "first_name",
-            "last_name",
             "email",
             "birth_date",
             "phone",
@@ -59,8 +36,6 @@ class DetailedCustomerSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = [
             "id",
-            "first_name",
-            "last_name",
             "email",
             "birth_date",
             "phone",
