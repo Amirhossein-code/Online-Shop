@@ -11,11 +11,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
     fieldsets = ((None, {"fields": ("title", "description", "image")}),)
 
-    readonly_fields = ("created_at", "last_update")
-
-    def save_model(self, request, obj, form, change):
-        if change:
-            old_category = Category.objects.get(pk=obj.pk)
-            if obj.title != old_category.title:
-                obj.slug = custom_slugify(obj.title)
-        obj.save()
+    readonly_fields = ("created_at", "last_update", "slug")

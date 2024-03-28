@@ -23,6 +23,3 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     readonly_fields = ("created_at", "last_update")
-
-    def save_model(self, request, obj, form, change):
-        obj.save()

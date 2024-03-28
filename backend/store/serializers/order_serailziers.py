@@ -1,7 +1,9 @@
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import serializers
 from django.db import transaction
-from ..models import Order, OrderItem, Cart, CartItem, Customer
+from ..models import Order, OrderItem, Cart, CartItem, Customer, Address
 from ..serializers import SimpleProductSerializer
+from ..signals import order_created
 from ..signals import order_created
 
 
@@ -52,6 +54,14 @@ class CreateOrderSerializer(serializers.Serializer):
         with transaction.atomic():
             cart_id = self.validated_data["cart_id"]
             customer = Customer.objects.get(user_id=self.context["user_id"])
+
+            try:
+                address = Address.objects.get(customer=customer, main=True)
+            except ObjectDoesNotExist:
+                raise serializers.ValidationError(
+                    "No main address found for the customer."
+                )
+
             # Create Order obj
             order = Order.objects.create(customer=customer)
 
@@ -76,8 +86,7 @@ class CreateOrderSerializer(serializers.Serializer):
             Cart.objects.filter(pk=cart_id).delete()
 
             # TODO : Rediret User to The payment gateway
-            # TODO : Update Inventory if the purchase is complete
-            # TODO : Send a signal to shipping application to generate a ship Model
-            order_created.send_robust(self.__class__, order=order)
+            # TODO : Send a signal to shipping model to generate a ship obj
+            order_created.send_robust(self.__class__, order=order, address=address)
 
             return order

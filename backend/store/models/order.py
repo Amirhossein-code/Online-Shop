@@ -12,6 +12,19 @@ class Order(models.Model):
         (PAYMENT_STATUS_FAILED, "Failed"),
     ]
 
+    SHIPMENT_STATUS_NO_ORDER = "No order to set status"
+    SHIPMENT_STATUS_FAILED = "Shipment failed"
+    SHIPMENT_STATUS_SHIPPED = "Shipment success"
+    SHIPMENT_STATUS_NOT_SHIPPED = "Order is being processed"
+    SHIPMENT_STATUS_CHOICES = [
+        (SHIPMENT_STATUS_NO_ORDER, "No order to set status"),
+        (SHIPMENT_STATUS_FAILED, "Shipment failed"),
+        (SHIPMENT_STATUS_SHIPPED, "Shipment success"),
+        (SHIPMENT_STATUS_NOT_SHIPPED, "Order is being processed"),
+    ]
+    shipment_status = models.CharField(
+        max_length=30, choices=SHIPMENT_STATUS_CHOICES, default=SHIPMENT_STATUS_NO_ORDER
+    )
     placed_at = models.DateTimeField(auto_now_add=True)
     payment_status = models.CharField(
         max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING
