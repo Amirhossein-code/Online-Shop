@@ -51,13 +51,16 @@ class CreateOrderSerializer(serializers.Serializer):
     def save(self, **kwargs):
         with transaction.atomic():
             cart_id = self.validated_data["cart_id"]
-
             customer = Customer.objects.get(user_id=self.context["user_id"])
+            # Create Order obj
             order = Order.objects.create(customer=customer)
 
+            # get the cart in db by the cart ID posted
             cart_items = CartItem.objects.select_related("product").filter(
                 cart_id=cart_id
             )
+
+            # Create Order items for the created Order obj
             order_items = [
                 OrderItem(
                     order=order,
@@ -69,9 +72,12 @@ class CreateOrderSerializer(serializers.Serializer):
             ]
             OrderItem.objects.bulk_create(order_items)
 
+            # Delete the cart instance since Order is created with associated OrderItems
             Cart.objects.filter(pk=cart_id).delete()
-            # call a utility to redirect the suer to the payment section
-            # i need to pass user credentials and amount to be payeds
+
+            # TODO : Rediret User to The payment gateway
+            # TODO : Update Inventory if the purchase is complete
+            # TODO : Send a signal to shipping application to generate a ship Model
             order_created.send_robust(self.__class__, order=order)
 
             return order
