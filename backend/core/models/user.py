@@ -13,6 +13,7 @@ class User(AbstractUser):
 
     email = models.EmailField(max_length=100, unique=True)
     username = models.CharField(max_length=150, unique=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
