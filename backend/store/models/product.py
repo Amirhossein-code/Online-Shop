@@ -32,6 +32,9 @@ class Product(models.Model):
     discount_percent = models.IntegerField(
         null=True, blank=True, default=0, validators=[percentage_validator]
     )
+
+    # This is a generetive field just like slug even admin should not
+    # be able to edit or create these field
     original_price = models.PositiveBigIntegerField(null=True, blank=True)
     unit_price = models.PositiveBigIntegerField()
     inventory = models.PositiveIntegerField(default=0)

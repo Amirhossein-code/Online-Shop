@@ -6,10 +6,16 @@ from django.core.validators import MinValueValidator
 
 class Cart(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
+    total_price = models.PositiveBigIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
 
-    
+    def update_total_price(self):
+        self.total_price = sum(
+            item.product.unit_price * item.quantity for item in self.items.all()
+        )
+        self.save()
+
 
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name="items")

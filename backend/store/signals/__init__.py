@@ -2,4 +2,4 @@ from django.dispatch import Signal
 
 order_created = Signal()
 
-from . import create_ship_signal, handlers
+from . import handlers, update_cart_price_signal

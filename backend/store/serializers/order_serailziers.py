@@ -29,6 +29,7 @@ class OrderSerializer(serializers.ModelSerializer):
             "id",
             "placed_at",
             "payment_status",
+            "shipment_status",
             "customer",
             "items",
         ]
