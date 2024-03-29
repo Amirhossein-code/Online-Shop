@@ -22,4 +22,3 @@ from .order_serailziers import (
 )
 from .review_serialziers import ProductReviewSerializer, DisplayProductReviewSerializer
 from .address_serializers import AddressSerializer
-from .discount_serializers import DisocuntSerializer

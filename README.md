@@ -13,7 +13,7 @@ An e-commerce website with all essential features.
 
 ## Products
 
-- Admins can create products, categorize them, set discounts, create discount codes for carts, feature products in hot list, and manage product status effectively.
+- Admins can create products, categorize them, set discounts for products, feature products in hot list, and manage product status effectively.
 
 ## Client Side
 
@@ -28,4 +28,4 @@ An e-commerce website with all essential features.
 - When users want to complete a purchase, the cart ID is posted to the Orders endpoint.
 - Anonymous users need to register at this point.
 - An order is created with the cart and cart items, and the user is redirected to the payment gateway.
-- Upon successful purchase, a ship object is created to notify the admin to ship the items, and the inventory is updated.
+- Upon successful purchase, an order object is created and the admin can change the staus to shipped after shipping the items
