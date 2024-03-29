@@ -8,16 +8,20 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
 from rest_framework.viewsets import GenericViewSet
+from django_filters.rest_framework import DjangoFilterBackend
 
 from ..models import ProductReview
 from ..serializers import ProductReviewSerializer, DisplayProductReviewSerializer
 from ..permissions import IsObjectOwner
+from ..filters import ProductReviewFilter
 from ..paginations import NormalPagination
 
 
 class MyProductReviewViewSet(ModelViewSet):
     serializer_class = ProductReviewSerializer
     permission_classes = [IsAuthenticated, IsObjectOwner]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = ProductReviewFilter
     pagination_class = NormalPagination
 
     def get_serializer_context(self):

@@ -28,5 +28,4 @@ class CustomerAdmin(admin.ModelAdmin):
         ),
     )
 
-    readonly_fields = ("joined_at", "last_updated")
-
+    readonly_fields = ("joined_at", "last_updated", "id")

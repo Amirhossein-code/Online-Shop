@@ -2,15 +2,22 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from ..models import Order, Customer
+from django_filters.rest_framework import DjangoFilterBackend
+
 from ..serializers import (
     OrderSerializer,
     CreateOrderSerializer,
 )
+from ..paginations import NormalPagination
+from ..filters import OrderFilter
 
 
 class OrderViewSet(ModelViewSet):
     http_method_names = ["get", "post", "head", "options"]
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = OrderFilter
+    pagination_class = NormalPagination
 
     def create(self, request, *args, **kwargs):
         serializer = CreateOrderSerializer(

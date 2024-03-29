@@ -1,6 +1,5 @@
 from django.contrib import admin
 from ..models import Category
-from common.utils import custom_slugify
 
 
 @admin.register(Category)

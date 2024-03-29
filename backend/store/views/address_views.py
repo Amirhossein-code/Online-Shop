@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
@@ -10,11 +11,16 @@ from ..serializers import (
     AddressSerializer,
 )
 from ..permissions import IsObjectOwner
+from ..filters import AddressFilter
+from ..paginations import NormalPagination
 
 
 class AddressViewSet(ModelViewSet):
     serializer_class = AddressSerializer
     permission_classes = [IsAuthenticated, IsObjectOwner]
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = AddressFilter
+    pagination_class = NormalPagination
 
     def get_queryset(self):
         customer = self.request.user.customer
