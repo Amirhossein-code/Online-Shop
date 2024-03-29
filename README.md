@@ -28,3 +28,7 @@ An e-commerce website with all essential features for a seamless shopping experi
 - Anonymous users are prompted to register before finalizing the purchase.
 - Orders are created with cart details and items, redirecting users to the payment gateway for secure transactions.
 - Upon successful purchase, an order object is generated, allowing admins to manage order status and track shipments effectively.
+
+## Tech Stack
+
+- Backend: Django, Django Rest Framework, Celery, MySQL
