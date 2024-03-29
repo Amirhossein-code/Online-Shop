@@ -10,9 +10,7 @@ from ..serializers import (
 
 class OrderViewSet(ModelViewSet):
     http_method_names = ["get", "post", "head", "options"]
-
-    def get_permissions(self):
-        return [IsAuthenticated()]
+    permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         serializer = CreateOrderSerializer(
